@@ -1,0 +1,52 @@
+
+<div class="card p-8">
+    <div class="flex justify-content-center flex-wrap card-container yellow-container">
+
+        <div class="grid">
+            <form [formGroup]="form" (ngSubmit)="guardarLogin()">
+                <div class="col-12 flex align-items-center justify-content-center">
+                    <div class="p-fluid">
+
+                        <div class="field">
+                            <div pFocusTrap class="card flex align-items-center justify-content-center flex-wrap gap-3">
+                                <div>
+                                    <span class="p-float-label">
+                                        <input formControlName="username" type="text" class="form-control" placeholder="username" id="float-input" type="text" size="30" pInputText>
+                                        <label for="float-input">username</label>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="field">
+                            <div pFocusTrap class="card flex align-items-center justify-content-center flex-wrap gap-3">
+                                <div>
+                                    <span class="p-float-label">
+                                        <input formControlName="email" type="text" class="form-control" placeholder="Email" id="float-input" type="text" size="30" pInputText>
+                                        <label for="float-input">Email</label>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="field">
+                            <div pFocusTrap class="card flex align-items-center justify-content-center flex-wrap gap-3">
+                                <div>
+                                    <span class="p-float-label">
+                                        <input formControlName="password1" type="text" class="form-control" placeholder="password1" id="float-input" type="password" size="30" pInputText>
+                                        <label for="float-input">Password</label>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                                             
+                        <p-button type="submit" label="Login"></p-button>
+                      
+                    </div>
+                </div>
+            </form>        
+         
+        </div>
+
+    </div>
+</div> 

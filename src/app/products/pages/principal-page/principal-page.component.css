@@ -1,0 +1,29 @@
+.mt-2{
+    color: rgb(214, 30, 30);
+}
+.title{
+    color: rgb(100, 20, 175);
+}
+
+.paddin{
+    margin-top: 100px;;
+}
+.car{
+   display: flex;
+   justify-content:center;
+   align-items:center;
+}
+.Footer{
+    background-color: rgb(100, 20, 175);
+ 
+    color: white;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    font-family: sans-serif;
+}
+.strikethrough{
+	text-decoration:line-through;
+    color: dimgray;
+}
+

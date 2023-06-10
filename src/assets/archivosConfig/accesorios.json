@@ -1,0 +1,48 @@
+{
+    "data":[
+        {
+            "imagen":"assets/accesorios/bank.png",
+            "name":"Power Bank",
+            "price":"150.000",
+            "priceAnt":"250.000",
+            "description":"Power Bank Xiaomi 30.000 Mah 18w Carga Rápid.",
+            "inventoryStatus": "INSTOCK",
+            "tipo":"1",
+            "category":"Accesorios",
+            "rating": 5
+        },
+        {
+            "imagen":"assets/accesorios/bank.png",
+            "name":"Disco duro externo.",
+            "price":"4.500.000",
+            "priceAnt":"4.800.000",
+            "description":"Disco duro externo de 2 TB.",
+            "inventoryStatus": "INSTOCK",
+            "tipo":"1",
+            "category":"Accesorios",
+            "rating": 5
+        },
+        {
+            "imagen":"assets/accesorios/baseR.png",
+            "name":"Base refirgerante",
+            "price":"120.000",
+            "priceAnt":"150.000",
+            "description":"Base refrigerante PRO Gaming S500.",
+            "inventoryStatus": "INSTOCK",
+            "tipo":"1",
+            "category":"Accesorios",
+            "rating": 5
+        },
+        {
+            "imagen":"assets/accesorios/padMouse.png",
+            "name":"Pad Mouse",
+            "price":"120.000",
+            "priceAnt":"150.000",
+            "description":"Pad Mouse REDRAGON Gamer P006A.",
+            "inventoryStatus": "INSTOCK",
+            "tipo":"1",
+            "category":"Accesorios",
+            "rating": 5
+        }
+    ]
+}

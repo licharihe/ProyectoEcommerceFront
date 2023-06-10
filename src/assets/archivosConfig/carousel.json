@@ -1,0 +1,71 @@
+{
+    "data":[
+        {
+            "imagen":"assets/carousel/computer.png",
+            "name":"Computer Asus",
+            "price":"4.500.000",
+            "priceAnt":"4.800.000",
+            "description":"Portátil Gamer Asus TUF DASH FX516P F15 Intel Core i5-11300H RTX 3050 4GB Ram 8GB M.2 512GB.",
+            "inventoryStatus": "INSTOCK",
+            "tipo":"1",
+            "category":"Gamers",
+            "rating": 5
+        },
+        {
+            "imagen":"assets/carousel/caja.png",
+            "name":"Caja M-ATX",
+            "price":"690.000",
+            "priceAnt":"850.000",
+            "description":"Caja M-ATX Thermaltake micro ATX 3mm TG AH T200 (Negro)",
+            "inventoryStatus": "LOWSTOCK",
+            "tipo":"2",
+            "category":"Periféricos",
+            "rating": 3
+        },
+        {
+            "imagen":"assets/carousel/audifonos.png",
+            "name":"Audifonos logitech",
+            "price":"1.500.000",
+            "priceAnt":"1.600.000",
+            "description":"Diadema Gamer Inalámbrico Logitech G733 Blanca RGB (Edición K/DA).",
+            "inventoryStatus": "OUTOFSTOCK",
+            "tipo":"3",
+            "category":"Periféricos",
+            "rating": 4
+            
+        },
+        {
+            "imagen":"assets/carousel/timon.png",
+            "name":"Timon",
+            "price":"1.300.000",
+            "priceAnt":"1.500.000",
+            "description":"Timón + Pedales LOGITECH G PC, PS3 y PS4 Gaming G29.",
+            "inventoryStatus": "OUTOFSTOCK",
+            "tipo":"3",
+            "category":"Periféricos",
+            "rating": 5
+        },
+        {
+            "imagen":"assets/carousel/audifonos1.png",
+            "name":"Diadema logitech",
+            "price":"499.000",
+            "priceAnt":"700.000",
+            "description":"Diadema Gamer Logitech G635 7.1.",
+            "inventoryStatus": "LOWSTOCK",
+            "tipo":"2",
+            "category":"Periféricos",
+            "rating": 3
+        },
+        {
+            "imagen":"assets/carousel/mouse1.png",
+            "name":"Mouse logitech",
+            "price":"650.000",
+            "priceAnt":"890.000",
+            "description":"Mouse usb logitech g502 x lightforce hero 25k.",
+            "inventoryStatus": "INSTOCK",
+            "tipo":"1",
+            "category":"Periféricos",
+            "rating": 3
+        }
+    ]
+}

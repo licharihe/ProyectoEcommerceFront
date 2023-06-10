@@ -1,0 +1,16 @@
+.title {
+    color: rgb(190, 13, 13);
+}
+
+.car {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.color {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(100, 20, 175);
+}

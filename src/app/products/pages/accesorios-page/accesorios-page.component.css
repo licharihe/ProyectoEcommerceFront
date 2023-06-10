@@ -1,0 +1,12 @@
+.strikethrough{
+	text-decoration:line-through;
+    color: dimgray;
+}
+.mt-2{
+    color: rgb(214, 30, 30);
+}
+.car{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+ }

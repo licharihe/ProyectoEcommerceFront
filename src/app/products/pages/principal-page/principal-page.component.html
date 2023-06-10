@@ -1,0 +1,366 @@
+<!-- <p>principal-page works!</p> -->
+
+
+<p-panel header="Tuaret Computers" class="p-1">
+
+    <div class="text-layout">
+        <h1 class="title">¡Parcerito nos llego mercancía de Cooler Master rápido que se acaban!</h1>
+    </div>
+</p-panel>
+
+<!-- <p-carousel [value]="carousel" [numVisible]="3" [numScroll]="3" [circular]="false"
+    [responsiveOptions]="responsiveOptions">
+    <ng-template let-carousel pTemplate="item">
+        <div class="border-1 surface-border border-round m-2 text-center py-5 px-3">
+            <div class="mb-3">
+                <img src="{{carousel.imagen}}" alt="{{carousel.name}}" class="w-6 shadow-2" />
+            </div>
+            <div>
+                <h5 class="mb-1">{{ carousel.name }}</h5>
+                <h4 class="mb-1">{{ carousel.description }}</h4>
+                <h2 class="mt-2 mb-3">{{'$ ' + carousel.price   }}</h2>
+                <h3 class=" strikethrough mt-2 mb-3">{{'$ ' + carousel.priceAnt }}</h3>
+
+                <ng-template [ngIf]="carousel.tipo==1" [ngIfElse]="success">
+                    <button pButton pRipple label="{{carousel.inventoryStatus}}" class="p-button-success"></button>
+                </ng-template>
+                <ng-template #success>
+                    <ng-template [ngIf]="carousel.tipo==2" [ngIfElse]="warning">
+                        <button pButton pRipple label="{{carousel.inventoryStatus}}" class="p-button-warning"></button>
+                    </ng-template>
+                </ng-template>
+                <ng-template #warning>
+                    <ng-template [ngIf]="true">
+                        <button pButton pRipple label="{{carousel.inventoryStatus}}" class="p-button-danger"></button>
+                    </ng-template>
+                </ng-template>
+
+                <div class="car-buttons mt-4">
+                    <p-button type="button" styleClass="p-button p-button-rounded mr-2" icon="pi pi-search"></p-button>
+                    <p-button type="button" styleClass="p-button-success p-button-rounded mr-2" icon="pi pi-star-fill"></p-button>
+                    <p-button type="button" styleClass="p-button-danger p-button-rounded mr-2" icon="pi pi-cart-plus"></p-button> 
+                </div>
+            </div>
+        </div>
+    </ng-template>
+</p-carousel> -->
+
+<!-- pruebas con servicio -->
+<p-carousel [value]="productos" [numVisible]="3" [numScroll]="3" [circular]="false"
+    [responsiveOptions]="responsiveOptions">
+    <ng-template let-productos pTemplate="item">
+        <div class="border-1 surface-border border-round m-2 text-center py-5 px-3">
+            <div class="mb-3">
+                <img src="{{productos.image}}" alt="{{productos.nombre}}" class="w-6 shadow-2" />
+            </div>  
+            <div>
+                <h5 class="mb-1">{{ productos.nombre }}</h5>
+                <h4 class="mb-1">{{ productos.descripcion }}</h4>
+                <h2 class="mt-2 mb-3">{{'$ ' + productos.valor |formatValores }}</h2>
+                <h3 class=" strikethrough mt-2 mb-3">{{'$ ' + productos.valor |formatValores }}</h3>
+
+                <ng-template [ngIf]="productos.cantidad > 0" [ngIfElse]="success">
+                    <button pButton pRipple label="INSTOCK" class="p-button-success"></button>
+                </ng-template>
+                <ng-template #success>
+                    <ng-template [ngIf]="productos.cantidad == 5" [ngIfElse]="warning">
+                        <button pButton pRipple label="OUTOFSTOCK" class="p-button-warning"></button>
+                    </ng-template>
+                </ng-template>
+                <ng-template #warning>
+                    <ng-template [ngIf]="true">
+                        <button pButton pRipple label="LOWSTOCK" class="p-button-danger"></button>
+                    </ng-template>
+                </ng-template>
+
+                <div class="car-buttons mt-4">
+                    <p-button type="button" styleClass="p-button p-button-rounded mr-2" icon="pi pi-search"></p-button>
+                    <p-button type="button" styleClass="p-button-success p-button-rounded mr-2" icon="pi pi-star-fill"></p-button>
+                    <p-button type="button" styleClass="p-button-danger p-button-rounded mr-2" icon="pi pi-cart-plus"></p-button> 
+                </div>
+            </div>         
+        </div>
+    </ng-template>
+</p-carousel>
+<!-- pruebas con servicio -->
+
+
+<p-divider align="right">
+    <p-button label="Search" icon="pi pi-search" styleClass="p-button-outlined"></p-button>
+</p-divider>
+
+<p-tabView>
+    <!-- <p-tabPanel header="Productos Disponibles">
+        <p-table [value]="carousel" [tableStyle]="{'min-width': '60rem'}">
+            <ng-template pTemplate="caption">
+                <div class="flex align-items-center justify-content-between">
+                    Products
+                    <p-button icon="pi pi-refresh"></p-button>
+                </div>
+            </ng-template>
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Name</th>
+                    <th>Image</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                    <th>Reviews</th>
+                    <th>Status</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-carousel>
+                <tr>
+                    <td>{{carousel.name}}</td>
+                    <td><img [src]="carousel.imagen" [alt]="carousel.name" width="100" class="shadow-4" /></td>
+                    <td><b>$ {{carousel.price}}</b></td>
+                    <td>{{carousel.category}}</td>
+                    <td><p-rating [cancel]="false"></p-rating></td>
+
+                    <ng-template [ngIf]="carousel.tipo==1" [ngIfElse]="success">
+                        <td style="color: rgb(31, 168, 12)"><b>{{carousel.inventoryStatus}}</b></td>
+                    </ng-template>
+                    <ng-template #success>
+                        <ng-template [ngIf]="carousel.tipo==2" [ngIfElse]="warning">
+                            <td style="color: rgb(230, 165, 46)"><b>{{carousel.inventoryStatus}}</b></td>
+                        </ng-template>
+                    </ng-template>
+                    <ng-template #warning>
+                        <ng-template [ngIf]="true">
+                            <td style="color: rgb(212, 17, 17)"><b>{{carousel.inventoryStatus}}</b></td>
+                        </ng-template>
+                    </ng-template>
+
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="summary">
+                <div class="flex align-items-center justify-content-between">
+                    In total there are {{carousel ? carousel.length : 0 }} products.
+                </div>
+            </ng-template>
+        </p-table>
+    </p-tabPanel> -->
+
+<!-- pruebas con accesorios -->
+    <p-tabPanel header="Productos Disponibles">
+
+        <p-table [value]="productos" [tableStyle]="{'min-width': '60rem'}">
+            <ng-template pTemplate="caption">
+                <div class="flex align-items-center justify-content-between">
+                    Products
+                    <p-button icon="pi pi-refresh"></p-button>
+                </div>
+            </ng-template>
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Name</th>
+                    <th>Image</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                    <th>Reviews</th>
+                    <th>Status</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-productos>
+                <tr>
+                    <td>{{productos.nombre}}</td>
+                    <td><img [src]="productos.image" [alt]="productos.nombre" width="100" class="shadow-4" /></td>
+                    <td><b>$ {{productos.valor |formatValores }}</b></td>
+                    <td>{{productos.categoria.nombreCategoria}}</td>
+                    <td><p-rating [cancel]="false"></p-rating></td>
+
+                    <ng-template [ngIf]="productos.cantidad >0" [ngIfElse]="success">
+                        <td style="color: rgb(31, 168, 12)"><b>INSTOCK</b></td>
+                    </ng-template>
+                    <ng-template #success>
+                        <ng-template [ngIf]="productos.cantidad ==5 " [ngIfElse]="warning">
+                            <td style="color: rgb(230, 165, 46)"><b>OUTOFSTOCK</b></td>
+                        </ng-template>
+                    </ng-template>
+                    <ng-template #warning>
+                        <ng-template [ngIf]="true">
+                            <td style="color: rgb(212, 17, 17)"><b>LOWSTOCK</b></td>
+                        </ng-template>
+                    </ng-template>
+
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="summary">
+                <div class="flex align-items-center justify-content-between">
+                    In total there are {{productos ? productos.length : 0 }} products.
+                </div>
+            </ng-template>
+        </p-table>
+    </p-tabPanel>
+<!-- pruebas con accesorios -->
+
+
+    <p-tabPanel header="Promociones">
+
+        <div class="grid">
+            <div class="col-12 md:col-6 lg:col-3">
+
+                <div pAnimate enterClass="flip" leaveClass="fadeoutleft"
+                    class="flex justify-content-center align-items-center h-20rem w-20rem border-round shadow-2 animation-duration-1000 animation-ease-out">
+                    <p-image
+                        src="https://liquimarcas.co/wp-content/uploads/2021/06/computador-barato-powergroup-j4040-5.jpg"
+                        alt="Image" width="250"></p-image>
+                </div>
+            </div>
+            <div class="col-12 md:col-6 lg:col-3">
+
+                <div pAnimate enterClass="flip" leaveClass="fadeoutleft"
+                    class="flex justify-content-center align-items-center h-20rem w-20rem border-round shadow-2 animation-duration-1000 animation-ease-out">
+                    <p-image
+                        src="https://panamericana.vtexassets.com/arquivos/ids/420257-800-auto?v=637747754799430000&width=800&height=auto&aspect=true"
+                        alt="Image" width="250"></p-image>
+                </div>
+            </div>
+            <div class="col-12 md:col-6 lg:col-3">
+                <div pAnimate enterClass="flip" leaveClass="fadeoutleft"
+                    class="flex justify-content-center align-items-center h-20rem w-20rem border-round shadow-2 animation-duration-1000 animation-ease-out">
+                    <p-image src="https://m.media-amazon.com/images/I/71u8uCEaMvL._AC_SX466_.jpg" alt="Image"
+                        width="250"></p-image>
+                </div>
+            </div>
+            <div class="col-12 md:col-6 lg:col-3">
+                <div pAnimate enterClass="flip" leaveClass="fadeoutleft"
+                    class="flex justify-content-center align-items-center h-20rem w-20rem border-round shadow-2 animation-duration-1000 animation-ease-out">
+                    <p-image src="https://m.media-amazon.com/images/I/71HZWq0YtxL.jpg" alt="Image"
+                        width="250"></p-image>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="grid">
+            <div class="paddin col-4">
+
+                <div pAnimate enterClass="flip" leaveClass="fadeoutleft"
+                    class="flex justify-content-center align-items-center h-20rem w-20rem border-round shadow-2 animation-duration-500 animation-ease-out">
+                    <p-image
+                        src="https://www.alcatel-home.com/sites/default/files/styles/eldapps_stability_product_slider_picture/public/ofertas1.png?itok=69ICubp6"
+                        alt="Image" width="250"></p-image>
+                </div>
+            </div>
+
+            <div class="col-4">
+
+                <div pAnimate enterClass="flip" leaveClass="fadeoutleft"
+                    class="flex justify-content-center align-items-center w-20rem border-round shadow-2 animation-duration-500 animation-ease-out">
+                    <p-card header="Periféricos" subheader="Impresora Multifuncional" [style]="{ width: '360px' }">
+                        <ng-template pTemplate="header">
+                            <p-image
+                                src="https://panamericana.vtexassets.com/arquivos/ids/420257-800-auto?v=637747754799430000&width=800&height=auto&aspect=true"
+                                alt="Image" width="250"></p-image>
+                        </ng-template>
+                        <h1 class="mt-2 mb-3"> $1.629.000</h1>
+                        <ng-template pTemplate="footer">
+                            <p-button class="car" label="Agregar al carro" styleClass="p-button-success"
+                                icon="pi pi-cart-plus"></p-button>
+                        </ng-template>
+                    </p-card>
+                </div>
+            </div>
+
+            <div class="col-4">
+
+                <div pAnimate enterClass="flip" leaveClass="fadeoutleft"
+                    class="flex justify-content-center align-items-center w-20rem border-round shadow-2 animation-duration-500 animation-ease-out">
+                    <p-card header="Gamers" subheader="Computador de Escritorio" [style]="{ width: '360px' }">
+                        <ng-template pTemplate="header">
+                            <p-image
+                                src="https://liquimarcas.co/wp-content/uploads/2021/06/computador-barato-powergroup-j4040-5.jpg"
+                                alt="Image" width="250"></p-image>
+                        </ng-template>
+                        <h1 class="mt-2 mb-3"> $1,631,700 </h1>
+                        <ng-template pTemplate="footer">
+                            <p-button class="car" label="Agregar al carro" styleClass="p-button-success"
+                                icon="pi pi-cart-plus"></p-button>
+                        </ng-template>
+                    </p-card>
+                </div>
+            </div>
+        </div> -->
+
+    </p-tabPanel>
+    <p-tabPanel [disabled]="true" header="Proximamente..."> </p-tabPanel>
+</p-tabView>
+
+
+<p-divider align="center">
+    <i class="pi pi-check"></i>
+    <b class="title">Encuentra todo en tauretcomputadores.com </b>
+</p-divider>
+
+<p-panel class="title" header="TÉRMINOS, CONDICIONES E INFORMACIÓN LEGAL">
+    <div class="grid">
+        <div class="col-12 md:col-6 lg:col-4">
+            <h3>SOBRE TAURET COMPUTADORES S.A.S.:</h3>
+            <p>
+                www.tauretcomputadores.com es un sitio web dedicado al comercio electrónico a través del cual se venden
+                productos y/o servicios que se entregan exclusivamente en el territorio de la República de Colombia.
+                www.tauretcomputadores es de propiedad de Tauret Computadores S.A.S. constituida bajo las leyes
+                colombianas, cuya actividad principal es la comercialización de tecnología. La marca Tauret Computadores
+                está registrada por Tauret Computadores S.A.S.
+            </p>
+        </div>
+        <div class="col-12 md:col-6 lg:col-4">
+            <h3> TERMINOS DEL CONTRATO:</h3>
+            <p>
+                El contrato entre el cliente y Tauret Computadores S.A.S. se perfeccionará cuando una oferta de compra
+                en el sitio realizada por el cliente, sea aceptada por Tauret Computadores S.A.S.. El contrato estará
+                regido por los términos definidos en el presente texto, los cuales rigen la venta de los productos y/o
+                servicios que se realice mediante la utilización de este sitio por parte de Tauret Computadores S.A.S. o
+                cualquiera de sus filiales que aparezcan en la factura correspondiente.
+
+                Nuestros servicios están disponibles sólo para aquellos individuos que tengan capacidad legal para
+                contratar, según lo dispuesto por la legislación colombiana vigente. Si el cliente no tiene capacidad
+                legal para contratar, le solicitamos que no utilice nuestros servicios. Tauret Computadores S.A.S. en
+                ningún caso estará obligado a aceptar una oferta de compra.
+            </p>
+        </div>
+        <div class="col-12 md:col-6 lg:col-4">
+            <h3> ENTREGA DE LOS PRODUCTOS:</h3>
+            <p>
+                Tauret Computadores S.A.S. se compromete a realizar entregas exclusivamente dentro del territorio
+                colombiano, en las zonas y lugares a los que tenga acceso de acuerdo con el acceso que tenga la empresa
+                de transporte certificado escogida para el envío (ver más información en la sección de servicio al
+                cliente), y por consiguiente podrá negarse a la aceptación de una oferta de compra cuando el domicilio
+                registrado por el cliente para realizar la entrega, no se encuentre dentro de las zonas geográficas
+                habilitadas por las empresas de transporte utilizadas para tal efecto.
+                Tauret Computadores S.A.S. No es una empresa de transporte y su responsabilidad se limita hasta la
+                entrega del articulo a la transportadora pasando la responsabilidad a está según el Código de Comercio
+                Título IV del contrato de transporte Capítulo III "Transporte de Cosas" Artículo 1013 "Entrega de
+                Mercancías y Responsabilidad del Transportador" y Artículo 1030 "Responsabilidad por pérdida total o
+                parcial de la cosa". El cliente asume total responsabilidad por la prima o seguro del envío así como su
+                reclamación ante la transportadora en caso de pérdida referenciado esto en el Código de Comercio en el
+                Capítulo I Artículo 994.
+            </p>
+        </div>
+    </div>
+
+</p-panel>
+
+<br>
+
+<div class="Footer">
+    <div class="card">
+        <div class="flex justify-content-center flex-wrap card-container yellow-container">
+            <div class="flex align-items-center justify-content-center  h-4rem  font-bold  border-round m-2">
+                <i class="pi pi-twitter" style="font-size: 1.5rem"></i>
+                <p-divider layout="vertical"></p-divider>
+                <i class="pi pi-instagram" style="font-size: 1.5rem"></i>
+                <p-divider layout="vertical"></p-divider>
+                <i class="pi pi-facebook" style="font-size: 1.5rem"></i>
+            </div>
+            <div class="flex align-items-center justify-content-center  h-4rem  font-bold  border-round m-2">Términos y
+                condiciones</div>
+            <div class="flex align-items-center justify-content-center  h-4rem  font-bold  border-round m-2">Política de
+                cookies</div>
+            <div class="flex align-items-center justify-content-center  h-4rem  font-bold  border-round m-2">Política de
+                privacidad</div>
+        </div>
+    </div>
+</div>
+<br>
+
+
+

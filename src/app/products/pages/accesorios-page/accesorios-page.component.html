@@ -1,0 +1,94 @@
+<!-- <p>accesorios-page works!</p> -->
+<!-- <p>accesorios proximamente!</p> -->
+
+<p-panel class="title p-1" header="Accesorios">
+    <div class="grid">
+        <div class="col-12 md:col-6 lg:col-3">
+
+            <p-tree [value]="files" class="w-full md:w-30rem" [filter]="true" filterPlaceholder="Search...">
+            </p-tree>
+
+        </div>
+        <div class="col-12 md:col-6 lg:col-3">
+            <div class="col flex align-items-center justify-content-center">
+
+                <p-card header="Disco Duro" subheader="Disco duro externo de 2 TB." [style]="{ width: '360px' }">
+                    <ng-template pTemplate="header">
+                        <p-image src="assets/accesorios/discoduro.png" alt="Image" width="250">
+                        </p-image>
+                    </ng-template>
+
+                    <h1 class="car mt-2 mb-3"> $ 450.000</h1>
+                    <h3 class="car strikethrough">$ 500.000</h3>
+                    <ng-template pTemplate="footer">
+                        <p-button class="car" label="Agregar al carro" styleClass="p-button-success"
+                            icon="pi pi-cart-plus"></p-button>
+                    </ng-template>
+                </p-card>
+
+            </div>
+        </div>
+        <div class="col-12 md:col-6 lg:col-3">
+            <div class="col flex align-items-center justify-content-center">
+                <p-card header="Base Refrigerante" subheader="Base refrigerante PRO Gaming S500." [style]="{ width: '360px' }">
+                    <ng-template pTemplate="header">
+                        <p-image src="assets/accesorios/baseR.png" alt="Image" width="250">
+                        </p-image>
+                    </ng-template>
+
+                    <h1 class="car mt-2 mb-3"> $150.000</h1>
+                    <h3 class="car strikethrough">$ 200.000</h3>
+                    <ng-template pTemplate="footer">
+                        <p-button class="car" label="Agregar al carro" styleClass="p-button-success"
+                            icon="pi pi-cart-plus"></p-button>
+                    </ng-template>
+                </p-card>
+            </div>
+        </div>
+        <div class="col-12 md:col-6 lg:col-3">
+            <div class="col flex align-items-center justify-content-center">
+                <p-card header="Pad Mouse" subheader="Pad Mouse REDRAGON Gamer P006A." [style]="{ width: '360px' }">
+                    <ng-template pTemplate="header">
+                        <p-image src="assets/accesorios/padMouse2.jpg" alt="Image" width="250">
+                        </p-image>
+                    </ng-template>
+
+                    <h1 class="car mt-2 mb-3"> $ 60.000</h1>
+                    <h3 class="car strikethrough">$ 70.000</h3>
+                    <ng-template pTemplate="footer">
+                        <p-button class="car" label="Agregar al carro" styleClass="p-button-success"
+                            icon="pi pi-cart-plus"></p-button>
+                    </ng-template>
+                </p-card>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="grid">
+        <div class="col-4">
+            <p-tree [value]="files" class="w-full md:w-30rem" [filter]="true" filterPlaceholder="Lenient Filter"></p-tree>
+        </div>
+        <div class="col-8">
+            <p-splitter [style]="{ height: '300px' }" styleClass="mb-5">
+                
+                <ng-template pTemplate>
+                    <div class="col flex align-items-center justify-content-center">
+                        <p-image pTooltip="Disco duro externo 2TB" tooltipPosition="bottom" src="assets/accesorios/discoduro.png" alt="Image" width="250"></p-image>  
+                    </div>
+                </ng-template>
+                <ng-template pTemplate>
+                    <div class="col flex align-items-center justify-content-center">
+                        <p-image pTooltip="Base refrigerante PRO S500" src="assets/accesorios/baseR.png" alt="Image" width="250"></p-image>  
+                    </div>
+                </ng-template>
+                <ng-template pTemplate>
+                    <div class="col flex align-items-center justify-content-center">
+                        <p-image pTooltip="Pad Mouse REDRAGON" tooltipPosition="bottom" src="assets/accesorios/padMouse.png" alt="Image" width="250"></p-image>  
+                    </div>
+                </ng-template>
+            </p-splitter>
+            
+        </div>
+        
+    </div> -->
+</p-panel>
